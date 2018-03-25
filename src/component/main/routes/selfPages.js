@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import '../less/selfPages.less'
+import { connect } from 'react-redux'
 class SelfPages extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
+    }
+    componentDidMount() {
+
     }
     render() { 
         return (
@@ -14,7 +18,7 @@ class SelfPages extends Component {
                         <div className="user-icon">
                             <img src="" />
                         </div>
-                        <h3>脱发女孩</h3>
+                        <h3>{}</h3>
                     </div>
                 </div>
             </div>
@@ -22,4 +26,11 @@ class SelfPages extends Component {
     }
 }
  
-export default SelfPages 
+
+// const mapStateToProps = (state) => {
+//     return {
+//         headImg: 
+//     }
+// } 
+
+export default connect()(SelfPages) 

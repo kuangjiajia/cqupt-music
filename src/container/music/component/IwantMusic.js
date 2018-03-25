@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../less/IwantMusic.less'
+
 class IwantMusic extends Component {
     constructor(props) {
         super(props);
@@ -7,7 +8,8 @@ class IwantMusic extends Component {
     }
     isChecked(e) {
         const name = e.target.checked
-        this.props.isAnonymity(name)
+        const bool = name === true ? 1 : 0
+        this.props.isAnonymity(bool)
     }
     render() { 
         return (

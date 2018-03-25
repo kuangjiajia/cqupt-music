@@ -2,7 +2,7 @@ const InputConfig = [
     {
         "type": "歌曲名",
         "placeholder": "请输入15字以内的歌曲~",
-        "prop": "musicName"
+        "prop": "songName",
     },
     {
         "type": "演唱者",
@@ -12,7 +12,7 @@ const InputConfig = [
     {
         "type": "对方学号",
         "placeholder": "请输入对方学号~",
-        "prop": "toStuId"
+        "prop": "toStuid"
     },
     {
         "type": "对方姓名",

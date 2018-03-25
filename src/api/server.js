@@ -1,10 +1,13 @@
 import axios from 'axios'
+import qs from 'qs'
 
 class Server {
     axios(method,url,params) {
         return new Promise((resolve,reject) => {
             if(method.toUpperCase() === 'POST') {
-                axios.post(url,params).then(res => {
+                console.log(123)
+                console.log(params)
+                axios.post(url,qs.stringify(params)).then(res => {
                     resolve(res)
                 }).catch(err => {
                     reject(err)
@@ -21,3 +24,5 @@ class Server {
         })
     }
 }
+
+export default Server

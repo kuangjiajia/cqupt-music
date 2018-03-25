@@ -6,6 +6,8 @@ import { InputConfig } from './config.js'
 import './less/view.less'
 import { addMusic } from './actions.js'
 import { connect } from 'react-redux'
+import API from '../../api/api.js'
+
 class Music extends Component {
     //adopted 0 未采纳 1已采纳
     constructor(props) {
@@ -13,15 +15,15 @@ class Music extends Component {
         const date = new Date().toLocaleDateString()
         console.log(date)
         this.state = {
-            "published": 0,
-            "adopted": 0,
-            "anonymity": false,
-            "musicName": "",
+            "isAnonymous": 0,
+            "songName": "",
             "singer": "",
-            "toStuId": "",
+            "toStuid": "",
             "toName": "",
-            "content": "",
-            date,
+            "saySth": "",
+            "openid": "ouRCyjk_lS-puvJHTIiYyItWMt74",
+            // "state": 
+            date
         }
     }
     onChange(props,value) {
@@ -32,27 +34,27 @@ class Music extends Component {
     onSubmit() {
         // console.log(this.state)
         const oldState = this.state
-        this.props.onClickAdd(oldState)
+        if(oldState.songName.trim() === "" || oldState.singer.trim() === "" || oldState.toStuid.trim() === "" || oldState.toName.trim() === "" || oldState.saySth.trim() === "") {
+            alert("输入不能为空")
+        }else if(oldState.songName.trim().length > 15) {
+            alert("输入的歌曲字数不能超过15字~~~")
+        }else if(oldState.saySth.trim().length > 50){
+            alert("输入的内容字数不能超过50字~~~")
+        }else {
+            this.props.onClickAdd(oldState)
+        } 
         this.setState({
-            "musicName": "",
+            "songName": "",
             "singer": "",
-            "toStuId": "",
+            "toStuid": "",
             "toName": "",
-            "content": ""
+            "saySth": ""
         })
     }
     isAnonymity(anonymity) {
         const oldState = this.state
-        oldState['anonymity'] = anonymity
+        oldState['isAnonymous'] = anonymity
         this.setState(oldState)
-    }
-    onBlur(sentence,wordsNum) {
-        const num = sentence.trim().length
-        if(num === 0){
-            
-        }else if(num > wordsNum) {
-            
-        }
     }
     render() { 
         return ( 
@@ -71,7 +73,7 @@ class Music extends Component {
                 }
                 <TextArea 
                 onInputChange={this.onChange.bind(this)} 
-                propName="content" val={this.state.content}
+                propName="saySth" val={this.state.saySth}
                 />
                 <IwantMusic 
                 onSubmit={this.onSubmit.bind(this)} 
@@ -85,6 +87,7 @@ class Music extends Component {
 const mapDispatchToProps = (dispatch, ownProps) => ({
     onClickAdd: (json) => {
         dispatch(addMusic(json))
+        API.subInfor(json)
     }
 })
  

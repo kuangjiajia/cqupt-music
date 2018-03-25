@@ -16,7 +16,7 @@ class TextArea extends Component {
         return ( 
             <div className="textarea-style">
                 <h3>想说的话</h3>
-                <textarea rows="4" cols="30" placeholder="请输入不超过50字的内容哦~"  onChange={this.onInputValueChange.bind(this)} value={this.props.val}></textarea>
+                <textarea rows="4" cols="33" placeholder="请输入不超过50字的内容哦~"  onChange={this.onInputValueChange.bind(this)} value={this.props.val}></textarea>
             </div>
         )
     }
