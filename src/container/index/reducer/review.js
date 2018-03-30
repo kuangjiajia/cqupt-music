@@ -1,4 +1,3 @@
-import API from '../../../api/api.js'
 import { upDateDataReview, addDataMoreReview } from '../action/review.js'
 
 const initialState = []

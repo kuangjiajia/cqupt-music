@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import '../less/item.less'
 import goodIc from '../images/good-ic.png'
 import goodChooseIc from '../images/good-choose-ic.png'
-import axios from 'axios'
 import API from '../../../api/api.js'
 
 class Item extends Component {
@@ -43,7 +42,7 @@ class Item extends Component {
             <div className="item-style">
                 <h2>
                     <div className="user-icon">
-                        <img src={imgSrc} />
+                        <img src={imgSrc} alt="user-infor"/>
                     </div>
                     <div className="musicion-music">
                         <i></i>&nbsp;
@@ -57,7 +56,7 @@ class Item extends Component {
                 </div>
                 <div className="from-who clearfix">
                     <div className="spot" onClick={this.handleClickChangeGood}>
-                        <img src={this.state.good === 0 ?  goodChooseIc : goodIc} />
+                        <img src={this.state.good === 0 ?  goodChooseIc : goodIc} alt="spot"/>
                     </div>
                     <div className="spot-text">
                         {this.state.likeNum}

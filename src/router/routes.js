@@ -8,7 +8,7 @@ class Root extends Component {
     render() { 
         return ( 
             <div>
-                {/* <Announce /> */}
+                <Announce />
                 <Main />
                 <Nav />
             </div>

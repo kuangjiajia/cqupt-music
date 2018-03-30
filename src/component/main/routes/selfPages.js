@@ -16,7 +16,7 @@ class SelfPages extends Component {
                 <div className="center-style">
                     <div className="user-infor">
                         <div className="user-icon">
-                            <img src="" />
+                            <img src="" alt="self-icon" />
                         </div>
                         <h3>{}</h3>
                     </div>

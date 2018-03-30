@@ -4,16 +4,15 @@ import TextArea from './component/textArea.js'
 import IwantMusic from './component/IwantMusic.js'
 import { InputConfig } from './config.js'
 import './less/view.less'
-import { addMusic } from './actions.js'
+import { addPublish } from '../index/action/newest.js'
 import { connect } from 'react-redux'
 import API from '../../api/api.js'
 
 class Music extends Component {
-    //adopted 0 未采纳 1已采纳
     constructor(props) {
         super(props)
-        const date = new Date().toLocaleDateString()
-        console.log(date)
+        // const date = new Date().toLocaleDateString()
+        // console.log(date)
         this.state = {
             "isAnonymous": 0,
             "songName": "",
@@ -23,7 +22,7 @@ class Music extends Component {
             "saySth": "",
             "openid": "ouRCyjk_lS-puvJHTIiYyItWMt74",
             // "state": 
-            date
+            // date
         }
     }
     onChange(props,value) {
@@ -86,7 +85,7 @@ class Music extends Component {
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
     onClickAdd: (json) => {
-        dispatch(addMusic(json))
+        dispatch(addPublish(json))
         API.subInfor(json)
     }
 })

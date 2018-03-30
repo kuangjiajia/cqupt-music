@@ -1,4 +1,3 @@
-import API from '../../../api/api.js'
 import axios from 'axios'
 export const upDateDataReview = "UPDATE_REVIEW"
 export const addDataMoreReview = "ADD_DATA_MORE_REVIEW"

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import '../less/indexRouter.less'
-import { Link } from 'react-router-dom'
 import RouteItem from './routeItem.js'
 class IndexRouter extends Component {
     constructor(props) {

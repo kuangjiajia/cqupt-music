@@ -1,6 +1,4 @@
 import { SHOW_NEWEST, SHOW_PREVIOUS } from './actionTypes.js'
-import { ADD_NUM } from './actions.js'
-import API from '../../api/api.js'
 const initialState = []
 
 export default (state = initialState,action ) => {

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import '../less/selfInforRouter.less'
-import { Link } from 'react-router-dom'
 import RouteItem from './routeItem.js'
 const config = [{
     page: "已发布",

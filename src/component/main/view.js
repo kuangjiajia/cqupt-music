@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './main.less'
-import { Route, Switch ,Redirect } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import Index from '../../container/index/view.js'
 import Music from '../../container/music/view.js'
 import SelfInfor from '../../container/selfInfor/view.js'
